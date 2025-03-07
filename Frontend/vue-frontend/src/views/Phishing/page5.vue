@@ -10,7 +10,7 @@
           
         </div>
 
-        <div class="flex justify-center">
+        <div class="flex justify-center motion-preset-focus  ">
 
             <div class="w-2xl bg-gray-900 rounded-md flex items-center flex-col relative p-4">
                 <div class="w-60 z-2"><img src="/Images/hacker.png" alt=""></div>
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div class="flex justify-center">
+        <div class="flex justify-center motion-preset-focus  ">
             <div class=" w-2xl flex gap-2 flex-col pt-6">
                 <p style="font-weight: 500;">Bad Hacker:</p>
                 <p>A bad hacker puts 2 Phishing in Sam’s email, would you identify those 2?</p>

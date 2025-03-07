@@ -1,4 +1,11 @@
 @import './base.css';
 @import "tailwindcss";
 
+@theme {
+    --color-primary: #75BD3D;
+}
+
+@plugin "tailwindcss-motion";
+@config "../../../tailwind.config.js";
+
 

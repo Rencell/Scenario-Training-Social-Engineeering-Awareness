@@ -11,12 +11,12 @@
             
         </div>
 
-        <div class="flex p-8 items-center text-black gap-4">
-            <div class="p-4 rounded w-fit bg-primary-own"></div>
+        <div class="flex p-8 items-center text-black gap-4 motion-preset-slide-right ">
+            <div class="p-4 rounded w-fit bg-primary-own "></div>
             There is two email phishing among the emails, your task is to find it
         </div>
 
-        <div class="flex justify-center">
+        <div class="flex justify-center motion-preset-slide-right ">
             <div class="flex w-7xl rounded-md shadow-md border-[0.5px] border-gray-200">
                 
                 <div class="grow text-black bg-white">
