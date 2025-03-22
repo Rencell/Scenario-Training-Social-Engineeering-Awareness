@@ -8,7 +8,7 @@
             </div>
             
             <div class="flex place-content-end">
-                <button @click="hideTooltip" class="p-2 text-white bg-primary-own rounded-md">Close</button>
+                <button @click="hideTooltip" class="p-2 text-white bg-primary rounded-md">Close</button>
             </div>
         </div>
     </div>

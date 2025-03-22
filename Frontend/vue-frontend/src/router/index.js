@@ -13,7 +13,6 @@ import page6 from '../views/Phishing/page6.vue'
 import Page7 from '../views/Phishing/page7.vue'
 import Page8 from '../views/Phishing/page8.vue'
 import Page9 from '../views/Phishing/page9.vue'
-import page10 from '../views/Phishing/Page10.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -47,8 +46,7 @@ const router = createRouter({
     { path: '/phishing/page6', name: 'page6', component: page6},
     { path: '/phishing/page7', name: 'page7', component: Page7},
     { path: '/phishing/page8', name: 'page8', component: Page8},
-    { path: '/phishing/page9', name: 'page9', component: Page9},
-    { path: '/phishing/page10', name: 'page10', component: page10},
+    { path: '/phishing/page9', name: 'page9', component: Page9}
   ],
 })
 

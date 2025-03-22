@@ -1,11 +1,7 @@
 <template>
-    <div class="w-dvw h-dvh bg-[#F6F6F6] flex flex-col  text-black">
+    <div class="w-full h-full bg-[#F6F6F6] flex flex-col  text-black">
         <div class="p-3 ps-10 py-10 flex">
 
-            <div class="flex gap-2">
-                <div class="bg-primary-own p-4 rounded-md w-fit"></div>
-                <p class="flex items-center">Phishing Attacks</p>
-            </div>
 
           
         </div>
@@ -31,9 +27,9 @@
         <div>
 
             <div class="flex gap-2 text-white pt-20 justify-end pe-10">
-                <button class="bg-primary-own p-2 w-28 rounded ">PREVIOUS</button>
-                <RouterLink :to="{ name: 'page6' }" class="bg-primary-own p-2 w-28 rounded text-center">NEXT
-                </RouterLink>
+                <button @click="setCurrentPage(3)" class="bg-primary p-2 w-28 rounded ">PREVIOUS</button>
+                <button @click="setCurrentPage(5)" class="bg-primary p-2 w-28 rounded text-center">NEXT
+                </button>
             </div>
         </div>
     </div>
@@ -41,8 +37,15 @@
 
 <script setup>
 
-import { RouterLink, RouterView } from 'vue-router'
 
+//store
+import { useComponentStore } from '@/store/phishingPages.js';
+
+const ComponentStore = useComponentStore();
+
+const setCurrentPage = (index) =>{
+    ComponentStore.setPage(index); 
+};
 </script>
 
 <style scoped></style>

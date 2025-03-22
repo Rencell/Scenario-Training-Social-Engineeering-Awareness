@@ -4,6 +4,6 @@
 <template>
   <main>
 
-    hey bitch
+    hey
   </main>
 </template>
