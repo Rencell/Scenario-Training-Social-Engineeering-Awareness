@@ -7,7 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base : "/Scenario-Training-Social-Engineeering-Awareness/",
+  base : '/Scenario-Training-Social-Engineeering-Awareness/',
   plugins: [
     vue(),
     vueDevTools(),
