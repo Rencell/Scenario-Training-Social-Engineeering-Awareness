@@ -1,13 +1,13 @@
 <template>
   <div class="flex h-full w-full flex-col rounded-xl bg-[#F6F6F6]">
-    <div class="flex gap-2 p-3"></div>
+    <div class="flex gap-2 p-3 pt-5"></div>
     <div>
       <div class="flex justify-center gap-5">
         <div
           @click="toggle = 1"
           :class="{ [activeClass]: toggle == 1, [buttonAttr]: true }"
         >
-          Email Phishing
+          Spear Phishing
         </div>
         <div
           @click="toggle = 2"
@@ -19,7 +19,7 @@
           @click="toggle = 3"
           :class="{ [activeClass]: toggle == 3, [buttonAttr]: true }"
         >
-          Social Media Phishing
+          Vishing
         </div>
         <div
           @click="toggle = 4"
@@ -44,7 +44,7 @@
         </button>
         <button
           class="bg-primary motion-scale-loop-105 w-28 rounded p-2 text-center"
-          @click="setCurrentPage(1)"
+          @click="setCurrentPage(2)"
         >
           NEXT
         </button>
@@ -71,7 +71,7 @@ const setCurrentPage = (index) => {
 const toggle = ref(1);
 const activeClass = "bg-primary text-white";
 const buttonAttr =
-  "text-black p-3 rounded-xl hover:bg-[#8bd965] transition-all hover:text-white";
+  "text-black p-3 rounded-xl hover:bg-primary-light transition-all hover:text-secondary";
 
 const arr = [compOne, compTwo, compThree, compFour];
 

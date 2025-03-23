@@ -26,7 +26,7 @@
         <p class="text-xs text-gray-500">{{emailContent.date}}</p>
       </div>
     </div>
-    <div class="bg-white-color h-fit w-full">
+    <div class="bg-white h-fit w-full">
       
       <component v-if="emailContent.emailPhishing" :is="emailComponents[emailContent.emailPhishing]"></component>
       
@@ -45,13 +45,17 @@
 <script setup>
 import { useEmail } from '@/store/phishingPages';
 import { emailData } from '@/composables/Phishing/pageSix/emails';
+import { computed} from 'vue';
 import  googleDrive  from '@/components/page6/Emails/googleDrive.vue'
 import  gcashSite  from '@/components/page6/Emails/GcashSite.vue'
-import { computed} from 'vue';
+import  metroBank  from '@/components/page6/Emails/metroBank.vue'
+import  grabSite  from '@/components/page6/Emails/GrabSite.vue'
 
 const emailComponents = {
   googleDrive,
-  gcashSite
+  gcashSite,
+  metroBank,
+  grabSite
 }
 
 const email = useEmail()

@@ -14,9 +14,9 @@
             </div>
             <div class="flex gap-2">
                 <button class="bg-primary p-1 px-5 text-white rounded text-center"
-                    @click="setCurrentPage(0)">Previous</Button>
+                    @click="setCurrentPage(1)">Previous</Button>
                 <button class="bg-primary p-1 px-5 text-white rounded text-center motion-scale-loop-105"
-                    @click="setCurrentPage(2)">Next</Button>
+                    @click="setCurrentPage(3)">Next</Button>
             </div>
         </div>
 

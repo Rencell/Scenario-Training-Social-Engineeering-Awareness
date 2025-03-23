@@ -1,17 +1,17 @@
 <template>
-    <div class="w-dvw h-dvh bg-[#F6F6F6] flex flex-col  text-white">
-        <div class="w-full p-3 bg-primary-own flex justify-between items-center px-8">
+    <div class="w-full h-full rounded-2xl bg-[#F6F6F6] flex flex-col  text-white overflow-auto">
+        <div @click="setCurrentPage(7)" class="w-full p-3 bg-primary flex justify-between items-center px-8 rounded-tr-xl rounded-tl-xl">
 
-            Menu
+            Previous
 
             <div class="flex gap-5 items-center">
-                < Leave Scenario <button class="rounded-md bg-white text-[#75BD3D] p-1 px-5">Submit</button>
+                &lt; Leave Scenario <button class="rounded-md bg-white text-[#75BD3D] p-1 px-5">Submit</button>
             </div>
 
         </div>
 
         <div class="flex p-8 items-center text-black gap-4">
-            <div class="p-4 rounded w-fit bg-primary-own"></div>
+            <div class="p-4 rounded w-fit bg-primary"></div>
             Your task is to identify the Phishing tactics used by the bad hacker
         </div>
 
@@ -46,20 +46,24 @@
 
         <div class="flex flex-wrap justify-center pt-5">
             <div class="flex flex-wrap gap-2 justify-center">
-                <button class="p-2 rounded-full bg-primary-own">Sense of urgency</button>
-                <button class="p-2 rounded-full bg-primary-own">Generic Greetings</button>
-                <button class="p-2 rounded-full bg-primary-own">Fake security update</button>
-                <button class="p-2 rounded-full bg-primary-own">Different URL link</button>
-                <button class="p-2 rounded-full bg-primary-own">Shared document</button>
-                <button class="p-2 rounded-full bg-primary-own">Suspicious from email</button>
+                <button class="p-2 rounded-full bg-primary">Sense of urgency</button>
+                <button class="p-2 rounded-full bg-primary">Generic Greetings</button>
+                <button class="p-2 rounded-full bg-primary">Fake security update</button>
+                <button class="p-2 rounded-full bg-primary">Different URL link</button>
+                <button class="p-2 rounded-full bg-primary">Shared document</button>
+                <button class="p-2 rounded-full bg-primary">Suspicious from email</button>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
+import { useComponentStore } from '@/store/phishingPages.js';
 
-import { RouterLink, RouterView } from 'vue-router'
+const ComponentStore = useComponentStore();
+const setCurrentPage = (index) => {
+  ComponentStore.setPage(index);
+};
 
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="w-dvw h-dvh bg-[#F6F6F6] flex-col gap-16 font-primary">
+    <div class="w-full h-dvh bg-[#F6F6F6] flex-col gap-16 font-primary">
         <div class="bg-[#F6F6F6] shadow-lg flex items-center justify-between p-3 text-primary font-semibold">
             <div>Logo</div>
             <div class="border-[1px] border-gray-300 p-2 px-4 rounded-xl">Home</div>
@@ -27,18 +27,21 @@
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import videoskit from '@/views/Phishing/videoskit.vue'
 import page1 from '@/views/Phishing/page1.vue'
 import page2 from '@/views/Phishing/page2.vue'
 import page3 from '@/views/Phishing/page3.vue'
 import page4 from '@/views/Phishing/page4.vue'
 import page5 from '@/views/Phishing/page5.vue'
 import page6 from '@/views/Phishing/page6.vue'
+import page7 from '@/views/Phishing/page7.vue'
+import page8 from '@/views/Phishing/page8.vue'
 
 //store
 import {useComponentStore} from '@/store/phishingPages.js';
 import { computed, ref } from 'vue'
 
-const componentPages = [page1,page2, page3, page4, page5, page6]
+const componentPages = [videoskit, page1,page2, page3, page4, page5, page6,page7, page8]
 
 
 const ComponentStore = useComponentStore();

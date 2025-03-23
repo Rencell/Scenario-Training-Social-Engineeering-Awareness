@@ -1,4 +1,3 @@
-
 <template>
     <div class="bg-[#f3f4f6] text-black w-dvw h-dvh">
         <div class="bg-secondary flex gap-2 p-2 ">

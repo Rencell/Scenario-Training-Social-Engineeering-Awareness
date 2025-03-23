@@ -28,11 +28,11 @@
 
     <div>
       <div class="flex justify-end gap-2 pe-10 pt-10 text-white">
-        <button @click="setCurrentPage(2)" class="bg-primary w-28 rounded p-2">
+        <button @click="setCurrentPage(3)" class="bg-primary w-28 rounded p-2">
           PREVIOUS
         </button>
         <button
-          @click="setCurrentPage(4)"
+          @click="setCurrentPage(5)"
           class="bg-primary w-28 rounded p-2 text-center"
         >
           NEXT
