@@ -5,11 +5,11 @@
     <div class="flex justify-between ps-20 pe-20 pt-10">
       <div class="text-3xl font-secondary font-extrabold">Learn to spot Phishing Tactics</div>
 
-      <div class="flex gap-2">
-        <button class="bg-primary p-1 w-24 text-white rounded text-center" @click="setCurrentPage(2)">
+      <div class="flex gap-2 text-white">
+        <button class="bg-primary p-2 w-28 rounded-lg hover:bg-primary/70 border-secondary border-b-4 shadow-md" @click="ComponentStore.previousPage()">
           Previous
         </button>
-        <button class="bg-primary p-1 w-24 text-white rounded text-center" @click="setCurrentPage(4)">
+        <button class="bg-primary p-2 w-28 rounded-lg hover:bg-primary/70 border-secondary border-b-4 shadow-md" @click="ComponentStore.nextPage()">
           Next
         </button>
       </div>
@@ -88,10 +88,6 @@ import descriptionExamples from "@/components/page3/description-examples.vue";
 import { useComponentStore } from '@/store/phishingPages.js';
 
 const ComponentStore = useComponentStore();
-
-const setCurrentPage = (index) => {
-  ComponentStore.setPage(index);
-};
 
 
 </script>

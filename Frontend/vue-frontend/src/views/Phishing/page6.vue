@@ -2,7 +2,7 @@
   <div class="flex h-full w-full flex-col rounded-xl bg-[#F6F6F6] text-white pointer-events-auto">
     <div class="bg-primary rounded-tr--xl flex w-full items-center justify-between rounded-tl-xl p-3 px-8">
       <div class="flex gap-2">
-        <button class="hover:bg-primary-light rounded-md hover:text-secondary p-2" @click="setCurrentPage(5)">
+        <button class="hover:bg-primary-light rounded-md hover:text-secondary p-2" @click="ComponentStore.previousPage()">
           <i class="bi bi-arrow-return-left"></i> Previous
         </button>
         <button class="hover:bg-primary-light rounded-md hover:text-secondary p-2" onclick="my_modal_1.showModal()">
@@ -19,7 +19,7 @@
           </button>
         </div>
         <div v-else>
-          <button @click="setCurrentPage(7)" class="text-primary rounded-md p-1 px-5 bg-white cursor-pointer">
+          <button @click="ComponentStore.nextPage(); emailStore.resetState()" class="text-primary rounded-md p-1 px-5 bg-white cursor-pointer">
             Next
           </button>
 
@@ -93,7 +93,7 @@
     <dialog id="my_modal_3" class="modal text-gray-700">
       <div class="modal-box w-96">
         <h3 class="text-lg font-bold">Aww</h3>
-        <p class="py-4">Among 5 emails, you've identified {{emailStore.isEqualPhishing}} over {{emailStore.listPhishing()}} phishing scam. Congratulations!</p>
+        <p class="py-4">Among 5 emails, you've scored {{parseInt(emailStore.isEqualPhishing)}}%. Great guess!</p>
         <div class="modal-action">
           <form method="dialog">
             <button class="btn bg-primary text-white" @click="isReveal = true">Close</button>
@@ -117,10 +117,6 @@ import { useEmail } from '@/store/phishingPages';
 //state management
 const ComponentStore = useComponentStore();
 const emailStore = useEmail();
-
-const setCurrentPage = (index) => {
-  ComponentStore.setPage(index);
-};
 
 //email data filter
 const email_datas = ref(emailStore.getListEmails());

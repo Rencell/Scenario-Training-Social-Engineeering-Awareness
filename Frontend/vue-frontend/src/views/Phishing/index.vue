@@ -26,29 +26,17 @@
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import videoskit from '@/views/Phishing/videoskit.vue'
-import page1 from '@/views/Phishing/page1.vue'
-import page2 from '@/views/Phishing/page2.vue'
-import page3 from '@/views/Phishing/page3.vue'
-import page4 from '@/views/Phishing/page4.vue'
-import page5 from '@/views/Phishing/page5.vue'
-import page6 from '@/views/Phishing/page6.vue'
-import page7 from '@/views/Phishing/page7.vue'
-import page8 from '@/views/Phishing/page8.vue'
+
 
 //store
 import {useComponentStore} from '@/store/phishingPages.js';
-import { computed, ref } from 'vue'
-
-const componentPages = [videoskit, page1,page2, page3, page4, page5, page6,page7, page8]
-
+import { computed} from 'vue'
 
 const ComponentStore = useComponentStore();
 
 
 const currentPage = computed(() => {
-    return componentPages[ComponentStore.currentPage]
+    return ComponentStore.getPage()
 });
 
 

@@ -15,7 +15,7 @@
                 </div>
             </div>
         
-            <button class="bg-white p-2 px-6 text-primary font-semibold rounded-md absolute bottom-10 right-10" @click="setCurrentPage(1)">Next</button>
+            <button class="bg-white text-primary p-2 w-28 rounded-lg hover:bg-primary-light border-secondary border-b-4 shadow-md absolute bottom-10 right-10" @click="ComponentStore.nextPage()">Next</button>
         </div>
 
     </div>
@@ -27,9 +27,5 @@
 import { useComponentStore } from '@/store/phishingPages.js';
 
 const ComponentStore = useComponentStore();
-
-const setCurrentPage = (index) => {
-    ComponentStore.setPage(index);
-};
 
 </script>

@@ -1,5 +1,6 @@
 <template>
-    <div class="w-full h-full bg-[#F6F6F6] flex flex-col text-black gap overflow-visible rounded-xl">
+    <div ref="heigh"
+        class="w-full h-full bg-[#F6F6F6] flex flex-col text-black gap rounded-xl overflow-hidden relative">
 
         <div class="p-3 ps-10 py-0 ">
 
@@ -9,14 +10,15 @@
 
         <div class="ps-20 pe-20 pt-10 pb-10 flex justify-between items-center gap-2">
             <div>
-                <div class="pb-2 text-3xl" style="font-weight: 700;">Test your skill!</div>
-                <div>Spot the signs of phishing by clicking the suspect elements.</div>
+                <div class="pb-2 text-3xl" style="font-weight: 700;">Look for These Red Flags!</div>
+                <div class="text-black/60">Spot the signs of phishing by clicking the suspect elements.</div>
             </div>
-            <div class="flex gap-2">
-                <button class="bg-primary p-1 px-5 text-white rounded text-center"
-                    @click="setCurrentPage(1)">Previous</Button>
-                <button class="bg-primary p-1 px-5 text-white rounded text-center motion-scale-loop-105"
-                    @click="setCurrentPage(3)">Next</Button>
+            <div class="flex gap-2 text-white">
+                <button class="bg-primary p-2 w-28 rounded-lg hover:bg-primary/70 border-secondary border-b-4 shadow-md"
+                    @click="ComponentStore.previousPage()">Previous</Button>
+                <button
+                    class="bg-primary p-2 w-28 rounded-lg hover:bg-primary/70 border-secondary border-b-4 shadow-md motion-scale-loop-105"
+                    @click="ComponentStore.nextPage()">Next</Button>
             </div>
         </div>
 
@@ -36,8 +38,10 @@
                         <i class="bi bi-person-circle text-7xl text-[#888888]"></i>
                         <div class="flex flex-col justify-center">
                             <div class="flex text-xl">
-                                <p class="font-secondary" @click="showToolTip(0, $event)">James Smith</p>
-                                <p class="font-secondary" @click="showToolTip(1, $event)">&lt;netflix.com-support.com&gt;
+                                <p class="font-secondary hover:transition-all hover:scale-105 cursor-pointer"
+                                    @click="showToolTip(0, $event)">James Smith</p>&nbsp;
+                                <p class="font-secondary hover:transition-all hover:scale-105 cursor-pointer"
+                                    @click="showToolTip(1, $event)">&lt;netflix.com-support.com&gt;
                                 </p>
                             </div>
 
@@ -48,41 +52,40 @@
 
 
                     <div class="ps-22 pt-10">
-                        <p @click="showToolTip(2, $event)">Sir/Madam</p>
+                        <p class="hover:transition-all hover:scale-105 cursor-pointer" @click="showToolTip(2, $event)">
+                            Sir/Madam</p>
                         <br>
-                        <p @click="showToolTip(3, $event)">your account has been temporarily suspended due to suspicious
+                        <p class="cursor-pointer hover:transition-all hover:scale-105" @click="showToolTip(3, $event)">your account has been temporarily suspended due to suspicious
                             activity. To restore access, please click the link below and verify your information
                             immediately: <span class="text-blue-600">Click to take action</span>. Failure to act within
-                            24 hours will result in permanent <span @click="showToolTip(5, $event)">acount</span>
+                            24 hours will result in permanent <span @click.stop="showToolTip(5, $event)">acount</span>
                             deactivation.</p>
                         <br>
                         <a href="http://bit.ly/4h4OyxC" @click.prevent="showToolTip(4, $event)"
-                            class="bg-blue-500 text-white p-3 rounded-md">CLICK HERE NOW!</a>
+                            class="bg-blue-500 text-white p-3 rounded-md ">CLICK HERE NOW!</a>
                     </div>
                 </div>
             </div>
         </div>
+        <tooltip :number-x=position.x :number-y=position.y :screen-y="position.screenY"
+            v-model:active-tool-tip="activeToolTip">
+            {{ annotation_text }}
+        </tooltip>
     </div>
 
-    <tooltip :number-x=position.x :number-y=position.y v-model:active-tool-tip="activeToolTip">
-        {{ annotation_text }}
-    </tooltip>
 </template>
 
 <script setup>
 
 import tooltip from '../../components/page2/tooltip.vue';
 import { data } from '../../components/page2/annotation.js';
-import { computed, ref, onMounted } from 'vue';
+import { computed, ref } from 'vue';
 
 //store
 import { useComponentStore } from '@/store/phishingPages.js';
 
 const ComponentStore = useComponentStore();
 
-const setCurrentPage = (index) => {
-    ComponentStore.setPage(index);
-};
 
 //Annotation
 const annotation_index = ref(0);
@@ -90,14 +93,19 @@ const get_rect = ref(null);
 const position = ref({ x: 0, y: 0 });
 const activeToolTip = ref(false)
 
+const heigh = ref(null)
+
+
 
 const showToolTip = (index, e) => {
     annotation_index.value = index;
     get_rect.value = e.target.getBoundingClientRect();
     position.value = {
         x: get_rect.value.x,
-        y: get_rect.value.y
+        y: get_rect.value.y,
+        screenY: heigh.value.getBoundingClientRect().height
     }
+    e.target.classList.add("check-pointed");
     activeToolTip.value = true
 }
 
@@ -107,11 +115,27 @@ const annotation_text = computed(() => {
 
 
 
-onMounted(() => {
-
-});
-
 
 </script>
 
-<style scoped></style>
+
+<style scoped>
+
+.check-pointed {
+    position: relative;
+    transition: all 0.3s ease-in-out; /* 0.3s duration with ease-in-out */
+}
+
+.check-pointed::before{
+    content: '✔';
+    font-size: 12px;
+    color: #75BD3D;
+    position: absolute;
+    width: fit-content;
+    border-radius: 50%;
+    top: -6px;
+    left: -10px;
+    transition: all ease-in;
+}
+
+</style>

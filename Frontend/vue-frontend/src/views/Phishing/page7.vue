@@ -26,8 +26,8 @@
         <div>
 
             <div class="flex gap-2 text-white pt-10 justify-end pe-10">
-                <button class="bg-primary p-2 w-28 rounded " @click="setCurrentPage(6)">PREVIOUS</button>
-                <button class="bg-primary p-2 w-28 rounded text-center" @click="setCurrentPage(8)">NEXT
+                <button class="bg-primary p-2 w-28 rounded-lg hover:bg-primary/70 border-secondary border-b-4 shadow-md" @click="ComponentStore.previousPage()">PREVIOUS</button>
+                <button class="bg-primary p-2 w-28 rounded-lg hover:bg-primary/70 text-center border-secondary border-b-4 shadow-md" @click="ComponentStore.nextPage()">NEXT
                 </button>
             </div>
         </div>
@@ -38,9 +38,6 @@
 import { useComponentStore } from '@/store/phishingPages.js';
 const ComponentStore = useComponentStore();
 
-const setCurrentPage = (index) => {
-  ComponentStore.setPage(index);
-};
 
 </script>
 
