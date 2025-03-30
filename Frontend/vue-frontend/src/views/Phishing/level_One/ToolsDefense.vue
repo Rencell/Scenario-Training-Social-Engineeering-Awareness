@@ -60,11 +60,11 @@ const togglePlay = () => {
 
 const toolsData = computed(() => toolsDefenseData[count.value]);
 const incrementCount = () => {
-  if (toolsDefenseData.length > count.value) {
-    count.value++;
-  }else{
+  count.value++;
+  if (toolsDefenseData.length -1 < count.value) {
     ComponentStore.nextPage()
   }
+  
 };
 const decrementCount = () => {
   count.value--;
