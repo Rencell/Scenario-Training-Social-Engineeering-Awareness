@@ -67,9 +67,8 @@ const incrementCount = () => {
   }
 };
 const decrementCount = () => {
-  if (0 <= count.value) {
-    count.value--;
-  }else{
+  count.value--;
+  if (0 > count.value) {
     ComponentStore.previousPage()
   }
 };
