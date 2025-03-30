@@ -14,14 +14,14 @@
             <div class="grid justify-center grid-cols-3 gap-4 absolute top-35">
                 
                 <div class="bg-white h-fit rounded-lg w-80 shadow-xl"> 
-                    <div class="bg-secondary h-40 rounded-tr-lg rounded-tl-lg bg-cover bg-center bg-[url(/Images/Category_Background/Phishing.png)]">
+                    <div class="bg-secondary h-52 rounded-tr-lg rounded-tl-lg bg-contain bg-center bg-[url(/Images/Category_Background/Phishing.jpg)]">
                        
                     </div>
                     <div class="p-7 flex flex-col gap-3">
-                        <p class="font-medium text-xl" style="font-weight: 600;"> Phishing Attack</p>
-                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p class="font-normal text-xl"> Phishing Attack</p>
+                        <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         <div class="pt-4">
-                            <RouterLink :to="{ name: 'phishing' }" class="text-sm rounded-2xl border-[#75BD3D] text-[#75BD3D] border-2 p-2">Start Now!</RouterLink>
+                            <RouterLink :to="{ name: 'phishingLevel' }" class="text-lg hover:bg-primary-light text-[#75BD3D] p-2 ps-0 ">LEARN MORE  </RouterLink>
                         </div>
                     </div>
                 </div>
