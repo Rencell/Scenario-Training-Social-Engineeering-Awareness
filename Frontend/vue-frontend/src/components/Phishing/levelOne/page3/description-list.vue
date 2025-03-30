@@ -36,10 +36,9 @@
         WHAT IS THIS?
       </h1>
       <p class="font-secondary mb-7 text-sm text-gray-800">
-        Most phishing attacks try to give sense of urgency to victim, seemingly
-        time-sensitive calls to action. The aim is to make victim feel as if
-        they’re missing out on an urgent offer or reward, or nervous about the
-        threat of punishment.
+        <slot name="description">
+          
+        </slot>
       </p>
 
       <h1 class="font-secondary mb-4 text-xs font-semibold text-gray-400">

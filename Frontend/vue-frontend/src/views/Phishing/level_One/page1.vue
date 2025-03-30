@@ -39,15 +39,7 @@
 
     <div>
       <div class="flex justify-end gap-2 pe-10 pt-10 text-white">
-        <!-- <button class="bg-primary p-2 w-28 rounded-lg hover:bg-primary/70 border-secondary border-b-4 shadow-md" @click="ComponentStore.previousPage()">
-          PREVIOUS
-        </button>
-        <button
-          class="bg-primary p-2 w-28 rounded-lg hover:bg-primary/70 border-secondary border-b-4 shadow-md"
-          @click="ComponentStore.nextPage()"
-        >
-          NEXT
-        </button> -->
+       
         <Button :click="ComponentStore.previousPage">
           PREVIOUS
         </Button>
@@ -62,8 +54,9 @@
 <script setup>
 import { computed, ref } from "vue";
 import Button from "@/components/UI/BaseButton.vue";
-import compOne from "@/components/Phishing/levelOne/page1/page1_email_phishing.vue";
+import compOne from "@/components/Phishing/levelOne/page1/page1_spear_phishing.vue";
 import compTwo from "@/components/Phishing/levelOne/page1/page1_smishing.vue";
+import compVishing from "@/components/Phishing/levelOne/page1/page1_vhishing.vue";
 import compThree from "@/components/Phishing/levelOne/page1/page1_website.vue";
 import compFour from "@/components/Phishing/levelOne/page1/page1_social_media.vue";
 
@@ -77,7 +70,7 @@ const activeClass = "bg-primary text-white";
 const buttonAttr =
   "text-black p-3 rounded-xl hover:bg-primary-light transition-all hover:text-secondary";
 
-const arr = [compOne, compTwo, compThree, compFour];
+const arr = [compOne, compTwo, compVishing, compThree, compFour];
 
 const activeComp = computed(() => {
   return arr[toggle.value - 1];

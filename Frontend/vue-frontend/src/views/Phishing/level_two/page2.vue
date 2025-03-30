@@ -50,6 +50,12 @@
                 </div>
                 <p class="text-center p-4 ">Directly route you to login</p>
             </div>
+            <div class="bg-white rounded-xl flex flex-col h-full ">
+                <div class="h-1/2 p-4 grow flex justify-center items-center">
+                    <img class="rounded h-full"  src="/Images/Phishing/phishingTwo/page2/login.png" alt="">
+                </div>
+                <p class="text-center p-4 ">Asking for information</p>
+            </div>
         </div>
     </div>
 </template>

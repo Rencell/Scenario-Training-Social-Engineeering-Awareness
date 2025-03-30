@@ -5,7 +5,7 @@
                     themes[props.theme], 
                     hovers
                     ]" 
-        @click="props.click">
+        @click="enable">
         <slot></slot>
     </button>
 </template>
@@ -30,6 +30,13 @@ const props = defineProps({
         default: true
     }
 })  
+
+const enable = computed(()=> {
+    if(props.withHover){
+        return props.click
+    }else
+        return null
+})
 
 const themes = {
     default: 'text-white bg-primary p-2 w-fit rounded-lg transition-all border-secondary border-b-4 shadow-md px-5',
