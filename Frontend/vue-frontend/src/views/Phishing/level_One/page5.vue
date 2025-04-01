@@ -4,13 +4,17 @@
 
             
             <div class="relative flex w-2xl flex-col items-center gap-4">
-                <p class="font-secondary p-3 bg-gray-300 rounded-xl">
-                    "Dear Valued Student,
-                    You’ve been selected as a winner of our Semester Rewards Program! Claim your $500 Amazon Gift Card
-                    in the next 2 HOURS by clicking below:
-                    👉 [<span class="text-blue-400">CLAIM NOW</span>] 👈
-                    Hurry—prizes expire soon!"
-                </p>
+                <div class="font-secondary p-3 bg-gray-300 rounded-xl">
+                    <p>Sam Received an email</p> <br>
+                    
+                    <i>
+                        "Dear Valued Student,
+                        You’ve been selected as a winner of our Semester Rewards Program! Claim your $500 Amazon Gift Card
+                        in the next 2 HOURS by clicking below:
+                        👉 [<span class="text-blue-400">CLAIM NOW</span>] 👈
+                        Hurry—prizes expire soon!"
+                    </i>
+                </div>
 
                <div class="rounded-md bg-primary p-2 w-full">
                     <div class="w-full h-60">

@@ -11,7 +11,7 @@
                 <p class="font-mono text-gray-700 text-3xl">F<span class="text-green-500">α</span>cebook</p>
             </div>
             <div class="w-60 pb-3 text-black text-sm pt-2 ">
-                Bad actors use different alphabet to make their site look legitimate, like the above highlights where a is replaced by Cyrillic alphabet 'α'
+                Bad actors use different alphabets to make their site look legitimate, like the above highlights where a is replaced by the Cyrillic alphabet 'α.'
             </div>
             <a href="https://guard.io/blog/cyrillic-scams-protection" target="_blank" class="text-blue-400">Learn more</a>
             

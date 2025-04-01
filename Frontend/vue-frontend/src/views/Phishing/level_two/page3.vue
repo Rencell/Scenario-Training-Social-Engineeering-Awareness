@@ -19,7 +19,7 @@
                     <i class="bi bi-arrow-repeat"></i>
                 </div>
 
-                <div class="grow px-5 relative" @click="tooltipDisable = true">
+                <div class="grow px-5 relative">
                     <input type="text"
                         class="bg-gray-800 rounded-full w-full ps-2 p-1 font-mono text-gray-400 outline-gray-800"
                         value="Fαcebook.com/login.php"
@@ -69,10 +69,13 @@
             </div>
             <div>
 
-                <BaseButton :with-hover="!enableButton" :click="showToolTip">
+                <BaseButton v-if="!triggerNext" :with-hover="!enableButton" :click="showToolTip">
                     
-                    <p v-if="!triggerNext">Reveal reason</p>
-                    <p v-else>Next</p>
+                    Reveal reason
+                </BaseButton>
+                <BaseButton v-else :click="phishingTwo.nextPage">
+                    
+                    Next
                 </BaseButton>
             </div>
         </div>
@@ -81,7 +84,7 @@
 
 <script setup>
 import BaseButton from '@/components/UI/BaseButton.vue';
-import { usePhishingTwo } from '@/store/Phishing/phishingLevelTwo';
+import { usePhishingTwo } from '@/store/Phishing/phishingLevelTwo/componentPage';
 import tooltip from '@/components/Phishing/levelTwo/page3/tooltip.vue';
 import { computed, ref } from 'vue';
 

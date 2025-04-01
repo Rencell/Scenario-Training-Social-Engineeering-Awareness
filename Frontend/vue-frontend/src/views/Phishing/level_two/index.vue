@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-dvh bg-[#F6F6F6] flex-col gap-16 font-primary">
+    <div class="w-full h-dvh bg-[#F6F6F6] flex-col gap-16 font-primary absolute">
         <div class="bg-[#F6F6F6] shadow-lg flex items-center justify-between p-3 text-primary font-semibold">
             <div>Logo</div>
             <RouterLink :to="{ name: 'phishingLevel' }" class="border-[1px] border-gray-300 p-2 px-4 rounded-xl">Back level
@@ -29,7 +29,7 @@
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { usePhishingTwo } from '@/store/Phishing/phishingLevelTwo';
+import { usePhishingTwo } from '@/store/Phishing/phishingLevelTwo/componentPage';
 import { computed } from 'vue';
 
 const phishingTwo = usePhishingTwo();

@@ -62,7 +62,7 @@
 
 <script setup>
 import BaseButton from '@/components/UI/BaseButton.vue';
-import { usePhishingTwo } from '@/store/Phishing/phishingLevelTwo';
+import { usePhishingTwo } from '@/store/Phishing/phishingLevelTwo/componentPage';
 
 const phishingTwo = usePhishingTwo();
 </script>
