@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.8",
+    "image-map-resizer": "^1.0.10",
     "pinia": "^3.0.1",
     "tailwind-scrollbar-hide": "^2.0.0",
     "vue": "^3.5.13",

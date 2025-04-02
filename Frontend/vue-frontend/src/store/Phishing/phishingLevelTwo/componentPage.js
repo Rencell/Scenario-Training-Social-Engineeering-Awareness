@@ -6,6 +6,7 @@ import page4 from '@/views/Phishing/level_two/page4.vue'
 import scenario1 from '@/views/Phishing/level_two/Scenario1.vue'
 import quiz from '@/views/Phishing/level_two/Quiz1.vue'
 import page5 from '@/views/Phishing/level_two/page5.vue'
+import trying from '@/views/Phishing/level_two/Quiz2.vue'
 import { computed, ref } from 'vue';
 
 
@@ -17,7 +18,8 @@ export const usePhishingTwo = defineStore('phishingTwo', () => {
         {id: "page4", component: page4, nextPage: "scenario1", previousPage: "page3", pageStep: 1 },
         {id: "scenario1", component: scenario1, nextPage: "quiz", previousPage: "page4", pageStep: 1 },
         {id: "quiz", component: quiz, nextPage: "page5", previousPage: "scenario1", pageStep: 1 },
-        {id: "page5", component: page5, nextPage: "scenario1", previousPage: "quiz", pageStep: 1 },
+        {id: "page5", component: page5, nextPage: "trying", previousPage: "quiz", pageStep: 1 },
+        {id: "trying", component: trying, nextPage: "scenario1", previousPage: "page5", pageStep: 1 },
     ]
 
     const currentPageId = ref(localStorage.getItem('phishingPageTwo') || "page1");

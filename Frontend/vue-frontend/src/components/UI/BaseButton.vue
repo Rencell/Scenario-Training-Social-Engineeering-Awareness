@@ -39,7 +39,7 @@ const enable = computed(()=> {
 })
 
 const themes = {
-    default: 'text-white bg-primary p-2 w-fit rounded-lg transition-all border-secondary border-b-4 shadow-md px-5',
+    default: 'text-white bg-primary p-2 w-fit rounded-lg transition-all border-secondary border-b-4 shadow-md px-5 h-10',
     white: 'bg-white outline-1 text-primary p-2 w-fit rounded-lg border-secondary border-b-4 shadow-md px-5 transition-all',
 }
 
