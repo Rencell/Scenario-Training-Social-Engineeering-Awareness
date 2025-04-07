@@ -70,10 +70,13 @@
 import { ZoomImg } from "vue3-zoomer";
 import imageMapResize from "image-map-resizer";
 
-
+import { useQuizTwo } from "@/store/Phishing/phishingLevelTwo/quizTwo";
 import { computed, nextTick, onMounted, ref, watch } from "vue";
 import { PhishingTwoQuizTwodata } from "@/composables/Phishing/levelTwo/QuizTwo";
 import timer from "@/components/Phishing/levelTwo/QuizTwo/timer.vue";
+import result from "./result.vue";
+
+const quizTwo = useQuizTwo()
 const data = ref(PhishingTwoQuizTwodata);
 
 const pageCount = ref(0);
@@ -81,9 +84,7 @@ const dataPage = computed(() => data.value[pageCount.value]);
 const found_count = ref(0);
 const foundAreas = ref([]);
 const number_areas = ref(dataPage.value.areas.length);
-// const found_percentage = computed(
-//   () => (found_count.value / number_areas.value) * 100,
-// );
+
 const score = ref(0);
 
 const zoom = ref('select');
@@ -96,7 +97,13 @@ const checkAreas = (area_id) => {
 };
 
 const nextData = () => {
-  if (pageCount.value < data.value.length) pageCount.value++;
+
+  pageCount.value++;
+
+  if (pageCount.value >= data.value.length) {
+    quizTwo.setPage(result);
+  }
+
   found_count.value = 0;
   foundAreas.value = [];
   imageMapResize();
@@ -113,6 +120,7 @@ watch(dataPage, async () => {
   await nextTick();
   resizeMap();
 })
+
 watch(zoom, async () => {
   if(zoom.value === 'select'){
 

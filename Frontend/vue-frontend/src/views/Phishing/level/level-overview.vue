@@ -65,7 +65,8 @@
                             </div>
                         </div>
                     </RouterLink>
-                    <div
+                    <RouterLink
+                        :to="{ name: 'PhishingThree' }"
                         class="flex items-center flex-col gap-4 hover:bg-primary/30 hover:transition-all transition-all p-4 rounded-xl cursor-pointer py-5">
                         <div class="w-60 text-center p-4 bg-primary rounded-xl font-semibold text-white text-xl">LEVEL 3
                         </div>
@@ -89,7 +90,7 @@
                                 <div class="w-10 h-5 bg-gray-400 transform rotate-65 ribbon"></div>
                             </div>
                         </div>
-                    </div>
+                    </RouterLink>
 
                 </div>
             </div>

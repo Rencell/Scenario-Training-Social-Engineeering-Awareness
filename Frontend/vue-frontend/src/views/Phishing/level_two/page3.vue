@@ -6,7 +6,7 @@
 
             <div class="flex py-5 items-center gap-2">
                 <div class="p-4 rounded w-fit bg-primary"></div>
-                <div class="text-secondary font-semibold">What do you think of this website?</div>
+                <div class="text-secondary font-semibold">Observe this website, guess if it contains any sign of website phishing attacks</div>
             </div>
             <div class="w-fit bg-[#44475A] rounded-tl-lg rounded-tr-lg p-2 px-3 flex gap-2" style="margin-left: 10px;">
                 <i class="bi bi-facebook"></i>
@@ -22,7 +22,7 @@
                 <div class="grow px-5 relative">
                     <input type="text"
                         class="bg-gray-800 rounded-full w-full ps-2 p-1 font-mono text-gray-400 outline-gray-800"
-                        value="Fαcebook.com/login.php"
+                        value="https://www.Fαcebook.com/login"
                         >
                     <div class="absolute top-10">
                         
@@ -35,9 +35,9 @@
                 <div class="w-96 bg-white flex flex-col gap-3 p-3 rounded-lg shadow-lg">
 
                     <div class="text-center text-black py-3">Log into Facebook</div>
-                    <input type="text" class="border-[0.5px] placeholder:text-gray-400 border-gray-300 p-2 rounded-md"
+                    <input type="text" class="text-black border-[0.5px] placeholder:text-gray-400 border-gray-300 p-2 rounded-md"
                         placeholder="Email or phone number">
-                    <input type="text" class="border-[0.5px]  placeholder:text-gray-400 border-gray-300 p-2 rounded-md"
+                    <input type="text" class="text-black border-[0.5px]  placeholder:text-gray-400 border-gray-300 p-2 rounded-md"
                         placeholder="Password">
                     <button class="bg-blue-500 p-2 rounded">Login</button>
                     <div class="text-blue-700 flex text-xs justify-center gap-3 py-3">

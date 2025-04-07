@@ -4,7 +4,8 @@ import AboutView from '../views/AboutView.vue'
 import Category from '../views/Category.vue'
 
 import Phishing from '@/views/Phishing/level_One/index.vue'
-import PhishingTwo from '@/views/Phishing/level_Two/index.vue'
+import PhishingTwo from '@/views/Phishing/level_two/index.vue'
+import PhishingThree from '@/views/Phishing/level_three/index.vue'
 import level_overview from '@/views/Phishing/level/level-overview.vue'
 
 const router = createRouter({
@@ -34,6 +35,11 @@ const router = createRouter({
       path: '/phishing/two',
       name: 'PhishingTwo',
       component: PhishingTwo
+    },
+    {
+      path: '/phishing/three',
+      name: 'PhishingThree',
+      component: PhishingThree
     },
     {
       path: '/phishing/levels',

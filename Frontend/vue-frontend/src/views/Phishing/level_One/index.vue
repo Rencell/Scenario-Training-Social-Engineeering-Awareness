@@ -15,7 +15,10 @@
                     <ul class="steps w-4xl p-2 text-sm">
                         <li v-for="(step, index) in steps" :key="index"
                             :class="[currentPageName >= index + 1 ? 'step-secondary' : 'step-white']"
-                            :data-content="index + 1 === steps.length ? '🏁' : '✓'" class="step">
+                            :data-content="index + 1 === steps.length ? '🏁' : '✓'"
+                            @click="gotoPageStart(index)"
+                            class="cursor-pointer step"
+                            >
                             {{ step }}
                         </li>
                     </ul>
@@ -54,6 +57,12 @@ const currentPageName = computed(() => {
     return page || 0;
 });
 
+const gotoPageStart = (step) => {
+    const match = ComponentStore.phishingPages.find(p => p.pageStep === step + 1)
+
+    const pageStart = match ? match.pageStart : null;
+    ComponentStore.setPage(pageStart)
+}
 
 </script>
 

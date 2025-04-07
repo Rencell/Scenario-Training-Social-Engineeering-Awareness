@@ -9,7 +9,7 @@
   import { ref, onMounted , watch} from 'vue';
   
   const props = defineProps({
-    duration: { type: Number, default: 50 },
+    duration: { type: Number, default: 5 },
     timerout: Function
   });
   
