@@ -1,11 +1,13 @@
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import page1 from '@/views/Phishing/level_three/page1.vue'
+import page2 from '@/views/Phishing/level_three/page2.vue'
 
 
 export const usePhishingThree = defineStore('phishingThree', () => {
     const phishingPageThree = [
-        {id: "page1", component: page1, nextPage: "page1", previousPage: "page1", pageStep: 1 },
+        {id: "page1", component: page1, nextPage: "page2", previousPage: "page1", pageStep: 1 },
+        {id: "page2", component: page2, nextPage: "page1", previousPage: "page1", pageStep: 1 },
     ]
 
     const currentPageId = ref(localStorage.getItem('phishingPageThree') || "page1");
